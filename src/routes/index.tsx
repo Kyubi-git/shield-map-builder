@@ -7,9 +7,11 @@ import {
   LayoutList,
   LogOut,
   Map as MapIcon,
+  MapPinOff,
   Plus,
   RotateCcw,
   ShieldAlert,
+  SlidersHorizontal,
 } from "lucide-react";
 import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
@@ -26,7 +28,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Slider } from "@/components/ui/slider";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { supabase } from "@/integrations/supabase/client";
 import {
   createHabitation,
@@ -45,7 +50,7 @@ import {
   type RiskWeights,
 } from "@/lib/risk-config";
 import { normalizeWeights, relocationPriority, scoreHabitations } from "@/lib/risk-engine";
-import type { Habitation } from "@/lib/types";
+import type { Habitation, ScoredHabitation } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const HazardMap = lazy(() => import("@/components/HazardMap"));
@@ -65,6 +70,8 @@ export const Route = createFileRoute("/")({
         content:
           "Interactive hazard map, rule-based risk scoring and relocation priorities for disaster management planners.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Dashboard,
@@ -79,6 +86,7 @@ const WEIGHT_FIELDS: { key: keyof RiskWeights; label: string }[] = [
 function Dashboard() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  const isMobile = useIsMobile();
   const [session, setSession] = useState<Session | null>(null);
   const [authChecked, setAuthChecked] = useState(false);
 
@@ -91,6 +99,7 @@ function Dashboard() {
   const [formOpen, setFormOpen] = useState(false);
   const [editing, setEditing] = useState<Habitation | null>(null);
   const [saving, setSaving] = useState(false);
+  const [controlsOpen, setControlsOpen] = useState(false);
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_event, next) => {
@@ -117,6 +126,9 @@ function Dashboard() {
     queryKey: ["hazards", region],
     queryFn: () => fetchHazards(region),
   });
+
+  const loading = habitationsQuery.isPending || hazardsQuery.isPending;
+  const loadError = habitationsQuery.error ?? hazardsQuery.error;
 
   const normalized = useMemo(() => normalizeWeights(weights), [weights]);
   const scored = useMemo(
@@ -150,6 +162,7 @@ function Dashboard() {
     setView("map");
     setSelectedId(id);
     setFocus({ lat, lng, key: Date.now() });
+    setControlsOpen(false);
   }
 
   async function handleSubmit(input: HabitationInput) {
@@ -190,23 +203,51 @@ function Dashboard() {
     );
   }
 
+  const controlRail = (
+    <ControlRail
+      counts={counts}
+      activeCategories={activeCategories}
+      onToggleCategory={toggleCategory}
+      weights={weights}
+      normalized={normalized}
+      onWeights={setWeights}
+      visible={visible}
+      selectedId={selectedId}
+      onSelect={viewOnMap}
+      loading={loading}
+      totalCount={scored.length}
+    />
+  );
+
   return (
     <div className="flex h-screen flex-col overflow-hidden bg-background text-foreground">
-      <header className="flex shrink-0 items-center gap-4 border-b border-border bg-card px-4 py-2.5">
-        <div className="flex items-center gap-2.5">
-          <div className="grid size-9 place-items-center rounded bg-primary text-primary-foreground">
+      <header className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border bg-card px-3 py-2.5 sm:gap-4 sm:px-4">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <Sheet open={controlsOpen} onOpenChange={setControlsOpen}>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="outline" className="lg:hidden" aria-label="Open controls">
+                <SlidersHorizontal className="size-4" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[85vw] max-w-sm overflow-y-auto p-0">
+              <SheetTitle className="sr-only">Dashboard controls</SheetTitle>
+              {controlRail}
+            </SheetContent>
+          </Sheet>
+
+          <div className="grid size-9 shrink-0 place-items-center rounded bg-primary text-primary-foreground">
             <ShieldAlert className="size-5" />
           </div>
-          <div>
-            <h1 className="text-sm font-bold uppercase tracking-widest">HazardShield GIS</h1>
-            <p className="text-[10px] text-muted-foreground">
+          <div className="min-w-0">
+            <h1 className="truncate text-sm font-bold uppercase tracking-widest">HazardShield GIS</h1>
+            <p className="hidden text-[10px] text-muted-foreground sm:block">
               Habitation risk &amp; relocation decision support
             </p>
           </div>
         </div>
 
         <Select value={region} onValueChange={(v) => { setRegion(v); setSelectedId(null); }}>
-          <SelectTrigger className="w-56">
+          <SelectTrigger className="w-40 sm:w-56">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -226,15 +267,16 @@ function Dashboard() {
             <button
               key={key}
               onClick={() => setView(key)}
+              aria-label={label}
               className={cn(
-                "flex items-center gap-1.5 rounded px-3 py-1.5 text-xs font-medium transition-colors",
+                "flex items-center gap-1.5 rounded px-2.5 py-1.5 text-xs font-medium transition-colors sm:px-3",
                 view === key
                   ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
-              <Icon className="size-3.5" />
-              {label}
+              <Icon className="size-3.5 shrink-0" />
+              <span className="hidden md:inline">{label}</span>
               {key === "report" && priority.length > 0 && (
                 <span className="rounded-full bg-destructive px-1.5 text-[10px] font-bold text-white">
                   {priority.length}
@@ -252,11 +294,13 @@ function Dashboard() {
               setFormOpen(true);
             }}
           >
-            <Plus className="size-4" /> Add habitation
+            <Plus className="size-4" />
+            <span className="hidden sm:inline">Add habitation</span>
           </Button>
           <Button
             size="sm"
             variant="ghost"
+            aria-label="Sign out"
             onClick={async () => {
               await supabase.auth.signOut();
               navigate({ to: "/auth" });
@@ -268,142 +312,58 @@ function Dashboard() {
       </header>
 
       <div className="flex min-h-0 flex-1">
-        {/* Left control rail */}
-        <aside className="flex w-72 shrink-0 flex-col gap-5 overflow-y-auto border-r border-border bg-card px-4 py-4">
-          <section>
-            <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-              Risk categories
-            </h2>
-            <div className="mt-2 space-y-1.5">
-              {counts.map(({ category, count }) => (
-                <label
-                  key={category}
-                  className="flex cursor-pointer items-center gap-2.5 rounded-md border border-border/60 bg-muted/20 px-2.5 py-2"
-                >
-                  <Checkbox
-                    checked={activeCategories.includes(category)}
-                    onCheckedChange={() => toggleCategory(category)}
-                  />
-                  <span
-                    className="size-2.5 shrink-0 rounded-full"
-                    style={{ backgroundColor: CATEGORY_COLORS[category] }}
-                  />
-                  <span className="flex-1 text-xs font-medium">{category}</span>
-                  <span className="font-mono text-xs tabular-nums text-muted-foreground">
-                    {count}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <div className="flex items-center justify-between">
-              <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-                Risk weights
-              </h2>
-              <Button
-                size="sm"
-                variant="ghost"
-                className="h-6 px-1.5 text-[11px]"
-                onClick={() => setWeights({ ...DEFAULT_WEIGHTS })}
-              >
-                <RotateCcw className="size-3" /> Reset
-              </Button>
-            </div>
-            <div className="mt-3 space-y-4">
-              {WEIGHT_FIELDS.map(({ key, label }) => (
-                <div key={key}>
-                  <div className="flex items-center justify-between text-xs">
-                    <Label className="text-xs">{label}</Label>
-                    <span className="font-mono tabular-nums">{weights[key].toFixed(2)}</span>
-                  </div>
-                  <Slider
-                    className="mt-2"
-                    min={0}
-                    max={1}
-                    step={0.05}
-                    value={[weights[key]]}
-                    onValueChange={([v]) => setWeights((w) => ({ ...w, [key]: v ?? 0 }))}
-                  />
-                </div>
-              ))}
-            </div>
-            <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
-              Total{" "}
-              <span className="font-mono">
-                {(
-                  weights.hazardProximityWeight +
-                  weights.populationDensityWeight +
-                  weights.terrainWeight
-                ).toFixed(2)}
-              </span>{" "}
-              — normalised to {normalized.hazardProximityWeight.toFixed(2)} /{" "}
-              {normalized.populationDensityWeight.toFixed(2)} /{" "}
-              {normalized.terrainWeight.toFixed(2)} before scoring.
-            </p>
-          </section>
-
-          <section className="min-h-0">
-            <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-              Habitations ({visible.length})
-            </h2>
-            <ul className="mt-2 space-y-1">
-              {visible.map((h) => (
-                <li key={h.id}>
-                  <button
-                    onClick={() => viewOnMap(h.id, h.latitude, h.longitude)}
-                    className={cn(
-                      "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-xs transition-colors hover:bg-muted",
-                      selectedId === h.id && "bg-muted",
-                    )}
-                  >
-                    <span
-                      className="size-2 shrink-0 rounded-full"
-                      style={{ backgroundColor: CATEGORY_COLORS[h.riskCategory] }}
-                    />
-                    <span className="flex-1 truncate">{h.name}</span>
-                    <span className="font-mono tabular-nums text-muted-foreground">
-                      {h.riskScore.toFixed(2)}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </section>
+        <aside className="hidden w-72 shrink-0 overflow-y-auto border-r border-border bg-card lg:block">
+          {controlRail}
         </aside>
 
-        {/* Main surface */}
         <main className="relative min-w-0 flex-1">
-          {habitationsQuery.isLoading || hazardsQuery.isLoading ? (
-            <div className="grid h-full place-items-center text-sm text-muted-foreground">
-              Loading regional datasets…
+          {loading ? (
+            <div className="h-full p-4">
+              <Skeleton className="h-full w-full rounded-lg" />
             </div>
-          ) : habitationsQuery.error || hazardsQuery.error ? (
+          ) : loadError ? (
             <div className="grid h-full place-items-center px-6 text-center">
               <div>
                 <AlertTriangle className="mx-auto size-8 text-destructive" />
                 <p className="mt-2 text-sm font-medium">Required data could not be loaded</p>
-                <p className="text-xs text-muted-foreground">
-                  {(habitationsQuery.error ?? hazardsQuery.error)?.message}
+                <p className="text-xs text-muted-foreground">{loadError.message}</p>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="mt-3"
+                  onClick={() => {
+                    habitationsQuery.refetch();
+                    hazardsQuery.refetch();
+                  }}
+                >
+                  Try again
+                </Button>
+              </div>
+            </div>
+          ) : scored.length === 0 ? (
+            <div className="grid h-full place-items-center px-6 text-center">
+              <div className="max-w-sm">
+                <MapPinOff className="mx-auto size-8 text-muted-foreground" />
+                <p className="mt-2 text-sm font-medium">No habitations recorded for this region</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Add the first habitation and its risk score, category and carrying capacity are
+                  calculated straight away.
                 </p>
+                <Button
+                  size="sm"
+                  className="mt-3"
+                  onClick={() => {
+                    setEditing(null);
+                    setFormOpen(true);
+                  }}
+                >
+                  <Plus className="size-4" /> Add habitation
+                </Button>
               </div>
             </div>
           ) : view === "map" ? (
-            <ClientOnly
-              fallback={
-                <div className="grid h-full place-items-center text-sm text-muted-foreground">
-                  Preparing map…
-                </div>
-              }
-            >
-              <Suspense
-                fallback={
-                  <div className="grid h-full place-items-center text-sm text-muted-foreground">
-                    Preparing map…
-                  </div>
-                }
-              >
+            <ClientOnly fallback={<MapFallback />}>
+              <Suspense fallback={<MapFallback />}>
                 <HazardMap
                   habitations={visible}
                   hazards={hazardsQuery.data ?? null}
@@ -416,9 +376,17 @@ function Dashboard() {
           ) : (
             <RelocationReport priority={priority} onView={viewOnMap} />
           )}
+
+          {view === "map" && !loading && visible.length === 0 && scored.length > 0 && (
+            <div className="pointer-events-none absolute inset-x-0 top-4 z-[500] flex justify-center px-4">
+              <p className="pointer-events-auto rounded-md border border-border bg-card/95 px-3 py-2 text-xs text-muted-foreground shadow">
+                All risk categories are filtered out — tick a category to see habitations again.
+              </p>
+            </div>
+          )}
         </main>
 
-        {selected && view === "map" && (
+        {selected && view === "map" && !isMobile && (
           <div className="w-80 shrink-0">
             <SettlementPanel
               settlement={selected}
@@ -432,6 +400,28 @@ function Dashboard() {
           </div>
         )}
       </div>
+
+      {isMobile && (
+        <Sheet
+          open={Boolean(selected) && view === "map"}
+          onOpenChange={(open) => !open && setSelectedId(null)}
+        >
+          <SheetContent side="bottom" className="h-[80vh] p-0">
+            <SheetTitle className="sr-only">Habitation details</SheetTitle>
+            {selected && (
+              <SettlementPanel
+                settlement={selected}
+                weights={normalized}
+                onClose={() => setSelectedId(null)}
+                onEdit={() => {
+                  setEditing(selected);
+                  setFormOpen(true);
+                }}
+              />
+            )}
+          </SheetContent>
+        </Sheet>
+      )}
 
       <HabitationForm
         open={formOpen}
@@ -449,6 +439,160 @@ function Dashboard() {
   );
 }
 
+function MapFallback() {
+  return (
+    <div className="h-full p-4">
+      <Skeleton className="h-full w-full rounded-lg" />
+    </div>
+  );
+}
+
+function ControlRail({
+  counts,
+  activeCategories,
+  onToggleCategory,
+  weights,
+  normalized,
+  onWeights,
+  visible,
+  selectedId,
+  onSelect,
+  loading,
+  totalCount,
+}: {
+  counts: { category: RiskCategory; count: number }[];
+  activeCategories: RiskCategory[];
+  onToggleCategory: (c: RiskCategory) => void;
+  weights: RiskWeights;
+  normalized: RiskWeights;
+  onWeights: (updater: (w: RiskWeights) => RiskWeights) => void;
+  visible: ScoredHabitation[];
+  selectedId: string | null;
+  onSelect: (id: string, lat: number, lng: number) => void;
+  loading: boolean;
+  totalCount: number;
+}) {
+  return (
+    <div className="flex flex-col gap-5 px-4 py-4">
+      <section>
+        <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+          Risk categories
+        </h2>
+        <div className="mt-2 space-y-1.5">
+          {counts.map(({ category, count }) => (
+            <label
+              key={category}
+              className="flex cursor-pointer items-center gap-2.5 rounded-md border border-border/60 bg-muted/20 px-2.5 py-2"
+            >
+              <Checkbox
+                checked={activeCategories.includes(category)}
+                onCheckedChange={() => onToggleCategory(category)}
+              />
+              <span
+                className="size-2.5 shrink-0 rounded-full"
+                style={{ backgroundColor: CATEGORY_COLORS[category] }}
+              />
+              <span className="min-w-0 flex-1 truncate text-xs font-medium">{category}</span>
+              <span className="font-mono text-xs tabular-nums text-muted-foreground">
+                {loading ? "—" : count}
+              </span>
+            </label>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="flex items-center justify-between">
+          <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+            Risk weights
+          </h2>
+          <Button
+            size="sm"
+            variant="ghost"
+            className="h-6 px-1.5 text-[11px]"
+            onClick={() => onWeights(() => ({ ...DEFAULT_WEIGHTS }))}
+          >
+            <RotateCcw className="size-3" /> Reset
+          </Button>
+        </div>
+        <div className="mt-3 space-y-4">
+          {WEIGHT_FIELDS.map(({ key, label }) => (
+            <div key={key}>
+              <div className="flex items-center justify-between text-xs">
+                <Label className="text-xs">{label}</Label>
+                <span className="font-mono tabular-nums">{weights[key].toFixed(2)}</span>
+              </div>
+              <Slider
+                className="mt-2"
+                min={0}
+                max={1}
+                step={0.05}
+                value={[weights[key]]}
+                onValueChange={([v]) => onWeights((w) => ({ ...w, [key]: v ?? 0 }))}
+              />
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
+          Total{" "}
+          <span className="font-mono">
+            {(
+              weights.hazardProximityWeight +
+              weights.populationDensityWeight +
+              weights.terrainWeight
+            ).toFixed(2)}
+          </span>{" "}
+          — normalised to {normalized.hazardProximityWeight.toFixed(2)} /{" "}
+          {normalized.populationDensityWeight.toFixed(2)} /{" "}
+          {normalized.terrainWeight.toFixed(2)} before scoring.
+        </p>
+      </section>
+
+      <section className="min-h-0">
+        <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+          Habitations ({loading ? "…" : visible.length})
+        </h2>
+        {loading ? (
+          <div className="mt-2 space-y-1.5">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-7 w-full" />
+            ))}
+          </div>
+        ) : visible.length === 0 ? (
+          <p className="mt-2 rounded-md border border-dashed border-border px-3 py-4 text-xs text-muted-foreground">
+            {totalCount === 0
+              ? "No habitations recorded for this region yet."
+              : "No habitation matches the selected risk categories."}
+          </p>
+        ) : (
+          <ul className="mt-2 space-y-1">
+            {visible.map((h) => (
+              <li key={h.id}>
+                <button
+                  onClick={() => onSelect(h.id, h.latitude, h.longitude)}
+                  className={cn(
+                    "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-xs transition-colors hover:bg-muted",
+                    selectedId === h.id && "bg-muted",
+                  )}
+                >
+                  <span
+                    className="size-2 shrink-0 rounded-full"
+                    style={{ backgroundColor: CATEGORY_COLORS[h.riskCategory] }}
+                  />
+                  <span className="min-w-0 flex-1 truncate">{h.name}</span>
+                  <span className="font-mono tabular-nums text-muted-foreground">
+                    {h.riskScore.toFixed(2)}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </div>
+  );
+}
+
 function RelocationReport({
   priority,
   onView,
@@ -457,15 +601,15 @@ function RelocationReport({
   onView: (id: string, lat: number, lng: number) => void;
 }) {
   return (
-    <div className="h-full overflow-y-auto px-6 py-5">
+    <div className="h-full overflow-y-auto px-4 py-5 sm:px-6">
       <h2 className="text-lg font-semibold">Relocation Priority Report</h2>
       <p className="mt-1 text-xs text-muted-foreground">
         Habitations classified as Red Zone or exceeding safe carrying capacity, ranked by combined
         urgency. Decision-support output — not a guaranteed prediction.
       </p>
 
-      <div className="mt-4 overflow-hidden rounded-lg border border-border">
-        <table className="w-full text-sm">
+      <div className="mt-4 overflow-x-auto rounded-lg border border-border">
+        <table className="w-full min-w-[880px] text-sm">
           <thead className="bg-muted/40 text-[11px] uppercase tracking-wider text-muted-foreground">
             <tr>
               <th className="px-3 py-2 text-left font-semibold">#</th>

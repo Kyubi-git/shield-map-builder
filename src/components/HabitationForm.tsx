@@ -90,7 +90,7 @@ export function HabitationForm({
 
         <form
           id="habitation-form"
-          className="grid grid-cols-2 gap-3"
+          className="grid grid-cols-1 gap-3 sm:grid-cols-2"
           onSubmit={(e) => {
             e.preventDefault();
             onSubmit({ ...draft, region });
