@@ -188,3 +188,21 @@
   color: oklch(0.95 0.008 250) !important;
   border-bottom-color: oklch(0.33 0.028 260) !important;
 }
+
+/* Keep the map beneath dialogs, sheets, dropdowns and toasts.
+   Leaflet ships very high z-index values on its panes and controls. */
+.leaflet-container {
+  z-index: 0;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tooltip,
+.leaflet-popup,
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-control {
+  z-index: 1 !important;
+}
