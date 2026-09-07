@@ -289,6 +289,7 @@ function Dashboard() {
         <div className="ml-auto flex items-center gap-2">
           <Button
             size="sm"
+            aria-label="Add habitation"
             onClick={() => {
               setEditing(null);
               setFormOpen(true);
