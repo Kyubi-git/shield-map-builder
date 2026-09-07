@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-001",
+        "region": "dehradun-valley",
+        "hazardType": "flood",
+        "intensity": "high",
+        "name": "Song River Flood Plain"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [78.0, 30.31],
+            [78.09, 30.3],
+            [78.15, 30.18],
+            [78.1, 30.14],
+            [78.02, 30.2],
+            [77.98, 30.27],
+            [78.0, 30.31]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-002",
+        "region": "dehradun-valley",
+        "hazardType": "landslide",
+        "intensity": "medium",
+        "name": "Sahastradhara Slope Belt"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [78.1, 30.4],
+            [78.19, 30.41],
+            [78.2, 30.35],
+            [78.12, 30.34],
+            [78.1, 30.4]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-003",
+        "region": "dehradun-valley",
+        "hazardType": "flash flood",
+        "intensity": "low",
+        "name": "Asan Barrage Catchment"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.74, 30.48],
+            [77.83, 30.47],
+            [77.84, 30.41],
+            [77.75, 30.42],
+            [77.74, 30.48]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-004",
+        "region": "chamoli-district",
+        "hazardType": "landslide",
+        "intensity": "high",
+        "name": "Joshimath Subsidence Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [79.52, 30.59],
+            [79.61, 30.585],
+            [79.62, 30.52],
+            [79.53, 30.525],
+            [79.52, 30.59]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-005",
+        "region": "chamoli-district",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Alaknanda Confluence Belt"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [79.18, 30.29],
+            [79.29, 30.28],
+            [79.34, 30.35],
+            [79.3, 30.41],
+            [79.22, 30.36],
+            [79.18, 30.29]
+          ]
+        ]
+      }
+    }
+  ]
+}
