@@ -4,6 +4,8 @@ import { ClientOnly } from "@tanstack/react-router";
 import type { Session } from "@supabase/supabase-js";
 import {
   AlertTriangle,
+  Check,
+  ChevronsUpDown,
   LayoutList,
   LogOut,
   Map as MapIcon,
@@ -44,7 +46,7 @@ import {
   updateHabitation,
   type HabitationInput,
 } from "@/lib/habitations";
-import { DEFAULT_REGION, REGIONS } from "@/lib/regions";
+import { DEFAULT_REGION, REGION_BY_ID, REGIONS } from "@/lib/regions";
 import {
   CATEGORY_COLORS,
   DEFAULT_WEIGHTS,
