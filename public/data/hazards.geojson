@@ -14,13 +14,34 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [78.0, 30.31],
-            [78.09, 30.3],
-            [78.15, 30.18],
-            [78.1, 30.14],
-            [78.02, 30.2],
-            [77.98, 30.27],
-            [78.0, 30.31]
+            [
+              78,
+              30.31
+            ],
+            [
+              78.09,
+              30.3
+            ],
+            [
+              78.15,
+              30.18
+            ],
+            [
+              78.1,
+              30.14
+            ],
+            [
+              78.02,
+              30.2
+            ],
+            [
+              77.98,
+              30.27
+            ],
+            [
+              78,
+              30.31
+            ]
           ]
         ]
       }
@@ -38,11 +59,26 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [78.1, 30.4],
-            [78.19, 30.41],
-            [78.2, 30.35],
-            [78.12, 30.34],
-            [78.1, 30.4]
+            [
+              78.1,
+              30.4
+            ],
+            [
+              78.19,
+              30.41
+            ],
+            [
+              78.2,
+              30.35
+            ],
+            [
+              78.12,
+              30.34
+            ],
+            [
+              78.1,
+              30.4
+            ]
           ]
         ]
       }
@@ -60,11 +96,26 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [77.74, 30.48],
-            [77.83, 30.47],
-            [77.84, 30.41],
-            [77.75, 30.42],
-            [77.74, 30.48]
+            [
+              77.74,
+              30.48
+            ],
+            [
+              77.83,
+              30.47
+            ],
+            [
+              77.84,
+              30.41
+            ],
+            [
+              77.75,
+              30.42
+            ],
+            [
+              77.74,
+              30.48
+            ]
           ]
         ]
       }
@@ -82,11 +133,26 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [79.52, 30.59],
-            [79.61, 30.585],
-            [79.62, 30.52],
-            [79.53, 30.525],
-            [79.52, 30.59]
+            [
+              79.52,
+              30.59
+            ],
+            [
+              79.61,
+              30.585
+            ],
+            [
+              79.62,
+              30.52
+            ],
+            [
+              79.53,
+              30.525
+            ],
+            [
+              79.52,
+              30.59
+            ]
           ]
         ]
       }
@@ -104,12 +170,3138 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [79.18, 30.29],
-            [79.29, 30.28],
-            [79.34, 30.35],
-            [79.3, 30.41],
-            [79.22, 30.36],
-            [79.18, 30.29]
+            [
+              79.18,
+              30.29
+            ],
+            [
+              79.29,
+              30.28
+            ],
+            [
+              79.34,
+              30.35
+            ],
+            [
+              79.3,
+              30.41
+            ],
+            [
+              79.22,
+              30.36
+            ],
+            [
+              79.18,
+              30.29
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-101",
+        "region": "andhra-pradesh",
+        "hazardType": "storm surge",
+        "intensity": "high",
+        "name": "Visakhapatnam Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              83.1375,
+              17.7788
+            ],
+            [
+              83.2995,
+              17.7512
+            ],
+            [
+              83.2833,
+              17.5948
+            ],
+            [
+              83.1456,
+              17.6132
+            ],
+            [
+              83.1375,
+              17.7788
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-102",
+        "region": "andhra-pradesh",
+        "hazardType": "storm surge",
+        "intensity": "high",
+        "name": "Vijayawada Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.589,
+              16.5802
+            ],
+            [
+              80.707,
+              16.558
+            ],
+            [
+              80.6952,
+              16.4322
+            ],
+            [
+              80.5949,
+              16.447
+            ],
+            [
+              80.589,
+              16.5802
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-103",
+        "region": "andhra-pradesh",
+        "hazardType": "cyclone",
+        "intensity": "low",
+        "name": "Tirupati Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.5302,
+              13.8588
+            ],
+            [
+              79.7182,
+              13.8393
+            ],
+            [
+              79.6994,
+              13.7288
+            ],
+            [
+              79.5396,
+              13.7418
+            ],
+            [
+              79.5302,
+              13.8588
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-104",
+        "region": "arunachal-pradesh",
+        "hazardType": "landslide",
+        "intensity": "high",
+        "name": "Itanagar Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              93.4933,
+              27.1694
+            ],
+            [
+              93.7173,
+              27.1439
+            ],
+            [
+              93.6949,
+              26.9994
+            ],
+            [
+              93.5045,
+              27.0164
+            ],
+            [
+              93.4933,
+              27.1694
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-105",
+        "region": "arunachal-pradesh",
+        "hazardType": "landslide",
+        "intensity": "low",
+        "name": "Pasighat Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              95.2693,
+              28.1587
+            ],
+            [
+              95.3973,
+              28.1311
+            ],
+            [
+              95.3845,
+              27.9747
+            ],
+            [
+              95.2757,
+              27.9931
+            ],
+            [
+              95.2693,
+              28.1587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-106",
+        "region": "assam",
+        "hazardType": "riverine flood",
+        "intensity": "low",
+        "name": "Guwahati Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.8222,
+              26.0915
+            ],
+            [
+              92.0602,
+              26.0621
+            ],
+            [
+              92.0364,
+              25.8955
+            ],
+            [
+              91.8341,
+              25.9151
+            ],
+            [
+              91.8222,
+              26.0915
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-107",
+        "region": "assam",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Dibrugarh Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              94.728,
+              27.3458
+            ],
+            [
+              94.906,
+              27.3296
+            ],
+            [
+              94.8882,
+              27.2378
+            ],
+            [
+              94.7369,
+              27.2486
+            ],
+            [
+              94.728,
+              27.3458
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-108",
+        "region": "assam",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Silchar Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.5789,
+              25.0763
+            ],
+            [
+              92.7309,
+              25.0403
+            ],
+            [
+              92.7157,
+              24.8363
+            ],
+            [
+              92.5865,
+              24.8603
+            ],
+            [
+              92.5789,
+              25.0763
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-109",
+        "region": "bihar",
+        "hazardType": "riverine flood",
+        "intensity": "medium",
+        "name": "Patna Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.0436,
+              25.6911
+            ],
+            [
+              85.2316,
+              25.662
+            ],
+            [
+              85.2128,
+              25.4971
+            ],
+            [
+              85.053,
+              25.5165
+            ],
+            [
+              85.0436,
+              25.6911
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-110",
+        "region": "bihar",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Muzaffarpur Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.0647,
+              26.1019
+            ],
+            [
+              85.2967,
+              26.0839
+            ],
+            [
+              85.2735,
+              25.9819
+            ],
+            [
+              85.0763,
+              25.9939
+            ],
+            [
+              85.0647,
+              26.1019
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-111",
+        "region": "bihar",
+        "hazardType": "riverine flood",
+        "intensity": "high",
+        "name": "Bhagalpur Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              86.6982,
+              25.2575
+            ],
+            [
+              86.8802,
+              25.2347
+            ],
+            [
+              86.862,
+              25.1055
+            ],
+            [
+              86.7073,
+              25.1207
+            ],
+            [
+              86.6982,
+              25.2575
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-112",
+        "region": "chhattisgarh",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Raipur Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81.3686,
+              21.1964
+            ],
+            [
+              81.4746,
+              21.1655
+            ],
+            [
+              81.464,
+              20.9904
+            ],
+            [
+              81.3739,
+              21.011
+            ],
+            [
+              81.3686,
+              21.1964
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-113",
+        "region": "chhattisgarh",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Bilaspur Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81.8589,
+              22.3007
+            ],
+            [
+              82.0609,
+              22.2728
+            ],
+            [
+              82.0407,
+              22.1147
+            ],
+            [
+              81.869,
+              22.1333
+            ],
+            [
+              81.8589,
+              22.3007
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-114",
+        "region": "goa",
+        "hazardType": "cyclone",
+        "intensity": "high",
+        "name": "Panaji Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8598,
+              15.4369
+            ],
+            [
+              73.9918,
+              15.4198
+            ],
+            [
+              73.9786,
+              15.3229
+            ],
+            [
+              73.8664,
+              15.3343
+            ],
+            [
+              73.8598,
+              15.4369
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-115",
+        "region": "goa",
+        "hazardType": "cyclone",
+        "intensity": "low",
+        "name": "Margao Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.9052,
+              15.3922
+            ],
+            [
+              74.0672,
+              15.3595
+            ],
+            [
+              74.051,
+              15.1742
+            ],
+            [
+              73.9133,
+              15.196
+            ],
+            [
+              73.9052,
+              15.3922
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-116",
+        "region": "gujarat",
+        "hazardType": "cyclone",
+        "intensity": "medium",
+        "name": "Ahmedabad Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5064,
+              23.0885
+            ],
+            [
+              72.6364,
+              23.0687
+            ],
+            [
+              72.6234,
+              22.9565
+            ],
+            [
+              72.5129,
+              22.9697
+            ],
+            [
+              72.5064,
+              23.0885
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-117",
+        "region": "gujarat",
+        "hazardType": "cyclone",
+        "intensity": "medium",
+        "name": "Surat Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5911,
+              21.3892
+            ],
+            [
+              72.7151,
+              21.3667
+            ],
+            [
+              72.7027,
+              21.2392
+            ],
+            [
+              72.5973,
+              21.2542
+            ],
+            [
+              72.5911,
+              21.3892
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-118",
+        "region": "gujarat",
+        "hazardType": "cyclone",
+        "intensity": "high",
+        "name": "Bhuj Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              69.6759,
+              23.26
+            ],
+            [
+              69.9059,
+              23.2261
+            ],
+            [
+              69.8829,
+              23.034
+            ],
+            [
+              69.6874,
+              23.0566
+            ],
+            [
+              69.6759,
+              23.26
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-119",
+        "region": "haryana",
+        "hazardType": "riverine flood",
+        "intensity": "high",
+        "name": "Gurugram Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9216,
+              28.5325
+            ],
+            [
+              77.1316,
+              28.5106
+            ],
+            [
+              77.1106,
+              28.3865
+            ],
+            [
+              76.9321,
+              28.4011
+            ],
+            [
+              76.9216,
+              28.5325
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-120",
+        "region": "haryana",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Ambala Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.4621,
+              30.5332
+            ],
+            [
+              76.6941,
+              30.5074
+            ],
+            [
+              76.6709,
+              30.3612
+            ],
+            [
+              76.4737,
+              30.3784
+            ],
+            [
+              76.4621,
+              30.5332
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-121",
+        "region": "himachal-pradesh",
+        "hazardType": "cloudburst",
+        "intensity": "high",
+        "name": "Shimla Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9694,
+              31.3038
+            ],
+            [
+              77.1834,
+              31.2726
+            ],
+            [
+              77.162,
+              31.0958
+            ],
+            [
+              76.9801,
+              31.1166
+            ],
+            [
+              76.9694,
+              31.3038
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-122",
+        "region": "himachal-pradesh",
+        "hazardType": "flash flood",
+        "intensity": "high",
+        "name": "Manali Flash flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1222,
+              32.3002
+            ],
+            [
+              77.2562,
+              32.2831
+            ],
+            [
+              77.2428,
+              32.1862
+            ],
+            [
+              77.1289,
+              32.1976
+            ],
+            [
+              77.1222,
+              32.3002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-123",
+        "region": "himachal-pradesh",
+        "hazardType": "flash flood",
+        "intensity": "medium",
+        "name": "Dharamshala Flash flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.2584,
+              32.304
+            ],
+            [
+              76.3884,
+              32.2785
+            ],
+            [
+              76.3754,
+              32.134
+            ],
+            [
+              76.2649,
+              32.151
+            ],
+            [
+              76.2584,
+              32.304
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-124",
+        "region": "jharkhand",
+        "hazardType": "drought",
+        "intensity": "medium",
+        "name": "Ranchi Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.3696,
+              23.3061
+            ],
+            [
+              85.5816,
+              23.2746
+            ],
+            [
+              85.5604,
+              23.0961
+            ],
+            [
+              85.3802,
+              23.1171
+            ],
+            [
+              85.3696,
+              23.3061
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-125",
+        "region": "jharkhand",
+        "hazardType": "flood",
+        "intensity": "high",
+        "name": "Dhanbad Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              86.3744,
+              23.9067
+            ],
+            [
+              86.4864,
+              23.8734
+            ],
+            [
+              86.4752,
+              23.6847
+            ],
+            [
+              86.38,
+              23.7069
+            ],
+            [
+              86.3744,
+              23.9067
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-126",
+        "region": "karnataka",
+        "hazardType": "flood",
+        "intensity": "high",
+        "name": "Bengaluru Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.6006,
+              13.2136
+            ],
+            [
+              77.7346,
+              13.1926
+            ],
+            [
+              77.7212,
+              13.0736
+            ],
+            [
+              77.6073,
+              13.0876
+            ],
+            [
+              77.6006,
+              13.2136
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-127",
+        "region": "karnataka",
+        "hazardType": "riverine flood",
+        "intensity": "medium",
+        "name": "Mangaluru Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.919,
+              13.0591
+            ],
+            [
+              75.057,
+              13.0411
+            ],
+            [
+              75.0432,
+              12.9391
+            ],
+            [
+              74.9259,
+              12.9511
+            ],
+            [
+              74.919,
+              13.0591
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-128",
+        "region": "karnataka",
+        "hazardType": "drought",
+        "intensity": "high",
+        "name": "Madikeri Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.8532,
+              12.5904
+            ],
+            [
+              75.9732,
+              12.5688
+            ],
+            [
+              75.9612,
+              12.4464
+            ],
+            [
+              75.8592,
+              12.4608
+            ],
+            [
+              75.8532,
+              12.5904
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-129",
+        "region": "kerala",
+        "hazardType": "storm surge",
+        "intensity": "medium",
+        "name": "Kochi Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.1993,
+              10.0512
+            ],
+            [
+              76.3353,
+              10.0152
+            ],
+            [
+              76.3217,
+              9.8112
+            ],
+            [
+              76.2061,
+              9.8352
+            ],
+            [
+              76.1993,
+              10.0512
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-130",
+        "region": "kerala",
+        "hazardType": "flood",
+        "intensity": "high",
+        "name": "Wayanad (Kalpetta) Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.978,
+              11.6805
+            ],
+            [
+              76.188,
+              11.6589
+            ],
+            [
+              76.167,
+              11.5365
+            ],
+            [
+              75.9885,
+              11.5509
+            ],
+            [
+              75.978,
+              11.6805
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-131",
+        "region": "kerala",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Alappuzha Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.1928,
+              9.4621
+            ],
+            [
+              76.3368,
+              9.4297
+            ],
+            [
+              76.3224,
+              9.2461
+            ],
+            [
+              76.2,
+              9.2677
+            ],
+            [
+              76.1928,
+              9.4621
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-132",
+        "region": "madhya-pradesh",
+        "hazardType": "drought",
+        "intensity": "medium",
+        "name": "Bhopal Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2156,
+              23.2019
+            ],
+            [
+              77.4176,
+              23.1788
+            ],
+            [
+              77.3974,
+              23.0479
+            ],
+            [
+              77.2257,
+              23.0633
+            ],
+            [
+              77.2156,
+              23.2019
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-133",
+        "region": "madhya-pradesh",
+        "hazardType": "drought",
+        "intensity": "low",
+        "name": "Jabalpur Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.9344,
+              23.2565
+            ],
+            [
+              80.0384,
+              23.234
+            ],
+            [
+              80.028,
+              23.1065
+            ],
+            [
+              79.9396,
+              23.1215
+            ],
+            [
+              79.9344,
+              23.2565
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-134",
+        "region": "madhya-pradesh",
+        "hazardType": "riverine flood",
+        "intensity": "low",
+        "name": "Indore Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.6027,
+              22.9516
+            ],
+            [
+              75.7227,
+              22.9213
+            ],
+            [
+              75.7107,
+              22.7496
+            ],
+            [
+              75.6087,
+              22.7698
+            ],
+            [
+              75.6027,
+              22.9516
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-135",
+        "region": "maharashtra",
+        "hazardType": "storm surge",
+        "intensity": "medium",
+        "name": "Mumbai Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.6877,
+              19.021
+            ],
+            [
+              72.8797,
+              18.9976
+            ],
+            [
+              72.8605,
+              18.865
+            ],
+            [
+              72.6973,
+              18.8806
+            ],
+            [
+              72.6877,
+              19.021
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-136",
+        "region": "maharashtra",
+        "hazardType": "storm surge",
+        "intensity": "medium",
+        "name": "Pune Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.9027,
+              18.6984
+            ],
+            [
+              74.0327,
+              18.6723
+            ],
+            [
+              74.0197,
+              18.5244
+            ],
+            [
+              73.9092,
+              18.5418
+            ],
+            [
+              73.9027,
+              18.6984
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-137",
+        "region": "maharashtra",
+        "hazardType": "storm surge",
+        "intensity": "medium",
+        "name": "Chiplun Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.5837,
+              17.4113
+            ],
+            [
+              73.8077,
+              17.393
+            ],
+            [
+              73.7853,
+              17.2893
+            ],
+            [
+              73.5949,
+              17.3015
+            ],
+            [
+              73.5837,
+              17.4113
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-138",
+        "region": "manipur",
+        "hazardType": "flash flood",
+        "intensity": "medium",
+        "name": "Imphal Flash flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              94.0368,
+              25.006
+            ],
+            [
+              94.2028,
+              24.9754
+            ],
+            [
+              94.1862,
+              24.802
+            ],
+            [
+              94.0451,
+              24.8224
+            ],
+            [
+              94.0368,
+              25.006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-139",
+        "region": "manipur",
+        "hazardType": "cloudburst",
+        "intensity": "high",
+        "name": "Churachandpur Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              93.6243,
+              24.3873
+            ],
+            [
+              93.7423,
+              24.3711
+            ],
+            [
+              93.7305,
+              24.2793
+            ],
+            [
+              93.6302,
+              24.2901
+            ],
+            [
+              93.6243,
+              24.3873
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-140",
+        "region": "meghalaya",
+        "hazardType": "landslide",
+        "intensity": "high",
+        "name": "Shillong Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.7803,
+              25.8708
+            ],
+            [
+              91.8823,
+              25.8405
+            ],
+            [
+              91.8721,
+              25.6688
+            ],
+            [
+              91.7854,
+              25.689
+            ],
+            [
+              91.7803,
+              25.8708
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-141",
+        "region": "meghalaya",
+        "hazardType": "landslide",
+        "intensity": "high",
+        "name": "Cherrapunji Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.588,
+              25.409
+            ],
+            [
+              91.812,
+              25.3763
+            ],
+            [
+              91.7896,
+              25.191
+            ],
+            [
+              91.5992,
+              25.2128
+            ],
+            [
+              91.588,
+              25.409
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-142",
+        "region": "mizoram",
+        "hazardType": "cloudburst",
+        "intensity": "low",
+        "name": "Aizawl Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.7966,
+              23.9681
+            ],
+            [
+              92.9606,
+              23.9372
+            ],
+            [
+              92.9442,
+              23.7621
+            ],
+            [
+              92.8048,
+              23.7827
+            ],
+            [
+              92.7966,
+              23.9681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-143",
+        "region": "mizoram",
+        "hazardType": "cloudburst",
+        "intensity": "low",
+        "name": "Lunglei Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.6457,
+              22.9919
+            ],
+            [
+              92.8217,
+              22.9607
+            ],
+            [
+              92.8041,
+              22.7839
+            ],
+            [
+              92.6545,
+              22.8047
+            ],
+            [
+              92.6457,
+              22.9919
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-144",
+        "region": "nagaland",
+        "hazardType": "landslide",
+        "intensity": "low",
+        "name": "Kohima Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              94.13,
+              25.5521
+            ],
+            [
+              94.326,
+              25.5266
+            ],
+            [
+              94.3064,
+              25.3821
+            ],
+            [
+              94.1398,
+              25.3991
+            ],
+            [
+              94.13,
+              25.5521
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-145",
+        "region": "nagaland",
+        "hazardType": "landslide",
+        "intensity": "medium",
+        "name": "Dimapur Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              93.4296,
+              26.0923
+            ],
+            [
+              93.6556,
+              26.0575
+            ],
+            [
+              93.633,
+              25.8603
+            ],
+            [
+              93.4409,
+              25.8835
+            ],
+            [
+              93.4296,
+              26.0923
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-146",
+        "region": "odisha",
+        "hazardType": "storm surge",
+        "intensity": "high",
+        "name": "Bhubaneswar Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.7235,
+              20.4051
+            ],
+            [
+              85.9255,
+              20.3724
+            ],
+            [
+              85.9053,
+              20.1871
+            ],
+            [
+              85.7336,
+              20.2089
+            ],
+            [
+              85.7235,
+              20.4051
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-147",
+        "region": "odisha",
+        "hazardType": "cyclone",
+        "intensity": "high",
+        "name": "Puri Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.8842,
+              20.0205
+            ],
+            [
+              86.1142,
+              20.0028
+            ],
+            [
+              86.0912,
+              19.9025
+            ],
+            [
+              85.8957,
+              19.9143
+            ],
+            [
+              85.8842,
+              20.0205
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-148",
+        "region": "odisha",
+        "hazardType": "cyclone",
+        "intensity": "medium",
+        "name": "Balasore Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              86.8666,
+              21.5742
+            ],
+            [
+              87.0006,
+              21.5502
+            ],
+            [
+              86.9872,
+              21.4142
+            ],
+            [
+              86.8733,
+              21.4302
+            ],
+            [
+              86.8666,
+              21.5742
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-149",
+        "region": "punjab",
+        "hazardType": "flood",
+        "intensity": "low",
+        "name": "Ludhiana Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.6163,
+              30.808
+            ],
+            [
+              75.7183,
+              30.7786
+            ],
+            [
+              75.7081,
+              30.612
+            ],
+            [
+              75.6214,
+              30.6316
+            ],
+            [
+              75.6163,
+              30.808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-150",
+        "region": "punjab",
+        "hazardType": "riverine flood",
+        "intensity": "medium",
+        "name": "Jalandhar Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.6122,
+              31.248
+            ],
+            [
+              75.7242,
+              31.2159
+            ],
+            [
+              75.713,
+              31.034
+            ],
+            [
+              75.6178,
+              31.0554
+            ],
+            [
+              75.6122,
+              31.248
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-151",
+        "region": "rajasthan",
+        "hazardType": "drought",
+        "intensity": "medium",
+        "name": "Jaipur Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.6973,
+              26.9914
+            ],
+            [
+              75.8773,
+              26.9677
+            ],
+            [
+              75.8593,
+              26.8334
+            ],
+            [
+              75.7063,
+              26.8492
+            ],
+            [
+              75.6973,
+              26.9914
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-152",
+        "region": "rajasthan",
+        "hazardType": "flood",
+        "intensity": "high",
+        "name": "Jodhpur Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1373,
+              26.2469
+            ],
+            [
+              73.2573,
+              26.2265
+            ],
+            [
+              73.2453,
+              26.1109
+            ],
+            [
+              73.1433,
+              26.1245
+            ],
+            [
+              73.1373,
+              26.2469
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-153",
+        "region": "rajasthan",
+        "hazardType": "drought",
+        "intensity": "low",
+        "name": "Kota Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.7938,
+              25.2718
+            ],
+            [
+              75.9358,
+              25.2544
+            ],
+            [
+              75.9216,
+              25.1558
+            ],
+            [
+              75.8009,
+              25.1674
+            ],
+            [
+              75.7938,
+              25.2718
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-154",
+        "region": "sikkim",
+        "hazardType": "flash flood",
+        "intensity": "medium",
+        "name": "Gangtok Flash flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              88.3115,
+              27.2769
+            ],
+            [
+              88.4855,
+              27.2424
+            ],
+            [
+              88.4681,
+              27.0469
+            ],
+            [
+              88.3202,
+              27.0699
+            ],
+            [
+              88.3115,
+              27.2769
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-155",
+        "region": "sikkim",
+        "hazardType": "cloudburst",
+        "intensity": "low",
+        "name": "Mangan Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              88.4562,
+              27.5974
+            ],
+            [
+              88.5882,
+              27.571
+            ],
+            [
+              88.575,
+              27.4214
+            ],
+            [
+              88.4628,
+              27.439
+            ],
+            [
+              88.4562,
+              27.5974
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-156",
+        "region": "tamil-nadu",
+        "hazardType": "storm surge",
+        "intensity": "medium",
+        "name": "Chennai Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.1977,
+              13.1337
+            ],
+            [
+              80.3437,
+              13.1184
+            ],
+            [
+              80.3291,
+              13.0317
+            ],
+            [
+              80.205,
+              13.0419
+            ],
+            [
+              80.1977,
+              13.1337
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-157",
+        "region": "tamil-nadu",
+        "hazardType": "storm surge",
+        "intensity": "medium",
+        "name": "Coimbatore Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.7418,
+              10.9218
+            ],
+            [
+              76.9378,
+              10.9011
+            ],
+            [
+              76.9182,
+              10.7838
+            ],
+            [
+              76.7516,
+              10.7976
+            ],
+            [
+              76.7418,
+              10.9218
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-158",
+        "region": "tamil-nadu",
+        "hazardType": "flood",
+        "intensity": "low",
+        "name": "Ooty (Udhagamandalam) Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.6932,
+              11.4354
+            ],
+            [
+              76.8692,
+              11.4003
+            ],
+            [
+              76.8516,
+              11.2014
+            ],
+            [
+              76.702,
+              11.2248
+            ],
+            [
+              76.6932,
+              11.4354
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-159",
+        "region": "telangana",
+        "hazardType": "drought",
+        "intensity": "high",
+        "name": "Hyderabad Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.6137,
+              17.252
+            ],
+            [
+              78.7357,
+              17.231
+            ],
+            [
+              78.7235,
+              17.112
+            ],
+            [
+              78.6198,
+              17.126
+            ],
+            [
+              78.6137,
+              17.252
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-160",
+        "region": "telangana",
+        "hazardType": "flood",
+        "intensity": "low",
+        "name": "Warangal Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.4901,
+              18.0209
+            ],
+            [
+              79.6981,
+              18.0053
+            ],
+            [
+              79.6773,
+              17.9169
+            ],
+            [
+              79.5005,
+              17.9273
+            ],
+            [
+              79.4901,
+              18.0209
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-161",
+        "region": "tripura",
+        "hazardType": "landslide",
+        "intensity": "medium",
+        "name": "Agartala Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.1748,
+              23.9405
+            ],
+            [
+              91.3988,
+              23.9078
+            ],
+            [
+              91.3764,
+              23.7225
+            ],
+            [
+              91.186,
+              23.7443
+            ],
+            [
+              91.1748,
+              23.9405
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-162",
+        "region": "tripura",
+        "hazardType": "landslide",
+        "intensity": "medium",
+        "name": "Udaipur Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              91.3803,
+              23.5973
+            ],
+            [
+              91.5863,
+              23.5781
+            ],
+            [
+              91.5657,
+              23.4693
+            ],
+            [
+              91.3906,
+              23.4821
+            ],
+            [
+              91.3803,
+              23.5973
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-163",
+        "region": "uttar-pradesh",
+        "hazardType": "drought",
+        "intensity": "medium",
+        "name": "Lucknow Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81.0922,
+              26.8107
+            ],
+            [
+              81.2242,
+              26.7774
+            ],
+            [
+              81.211,
+              26.5887
+            ],
+            [
+              81.0988,
+              26.6109
+            ],
+            [
+              81.0922,
+              26.8107
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-164",
+        "region": "uttar-pradesh",
+        "hazardType": "riverine flood",
+        "intensity": "medium",
+        "name": "Varanasi Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              82.8749,
+              25.3806
+            ],
+            [
+              83.0729,
+              25.3617
+            ],
+            [
+              83.0531,
+              25.2546
+            ],
+            [
+              82.8848,
+              25.2672
+            ],
+            [
+              82.8749,
+              25.3806
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-165",
+        "region": "uttar-pradesh",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Gorakhpur Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              83.2632,
+              26.8246
+            ],
+            [
+              83.4832,
+              26.8054
+            ],
+            [
+              83.4612,
+              26.6966
+            ],
+            [
+              83.2742,
+              26.7094
+            ],
+            [
+              83.2632,
+              26.8246
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-166",
+        "region": "uttarakhand",
+        "hazardType": "landslide",
+        "intensity": "medium",
+        "name": "Haridwar Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.0182,
+              30.0827
+            ],
+            [
+              78.1862,
+              30.0617
+            ],
+            [
+              78.1694,
+              29.9427
+            ],
+            [
+              78.0266,
+              29.9567
+            ],
+            [
+              78.0182,
+              30.0827
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-167",
+        "region": "uttarakhand",
+        "hazardType": "cloudburst",
+        "intensity": "medium",
+        "name": "Nainital Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.4106,
+              29.4883
+            ],
+            [
+              79.5166,
+              29.4559
+            ],
+            [
+              79.506,
+              29.2723
+            ],
+            [
+              79.4159,
+              29.2939
+            ],
+            [
+              79.4106,
+              29.4883
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-168",
+        "region": "uttarakhand",
+        "hazardType": "landslide",
+        "intensity": "medium",
+        "name": "Rudrapur Landslide Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.3451,
+              29.0595
+            ],
+            [
+              79.4831,
+              29.037
+            ],
+            [
+              79.4693,
+              28.9095
+            ],
+            [
+              79.352,
+              28.9245
+            ],
+            [
+              79.3451,
+              29.0595
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-169",
+        "region": "west-bengal",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Kolkata Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              88.2639,
+              22.6586
+            ],
+            [
+              88.4639,
+              22.6328
+            ],
+            [
+              88.4439,
+              22.4866
+            ],
+            [
+              88.2739,
+              22.5038
+            ],
+            [
+              88.2639,
+              22.6586
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-170",
+        "region": "west-bengal",
+        "hazardType": "cyclone",
+        "intensity": "medium",
+        "name": "Siliguri Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              88.3043,
+              26.8221
+            ],
+            [
+              88.4863,
+              26.7936
+            ],
+            [
+              88.4681,
+              26.6321
+            ],
+            [
+              88.3134,
+              26.6511
+            ],
+            [
+              88.3043,
+              26.8221
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-171",
+        "region": "west-bengal",
+        "hazardType": "storm surge",
+        "intensity": "low",
+        "name": "Digha Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              87.3169,
+              21.7953
+            ],
+            [
+              87.4449,
+              21.7791
+            ],
+            [
+              87.4321,
+              21.6873
+            ],
+            [
+              87.3233,
+              21.6981
+            ],
+            [
+              87.3169,
+              21.7953
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-172",
+        "region": "andaman-and-nicobar-islands",
+        "hazardType": "storm surge",
+        "intensity": "low",
+        "name": "Port Blair Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              92.8505,
+              11.8674
+            ],
+            [
+              93.0065,
+              11.8362
+            ],
+            [
+              92.9909,
+              11.6594
+            ],
+            [
+              92.8583,
+              11.6802
+            ],
+            [
+              92.8505,
+              11.8674
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-173",
+        "region": "chandigarh",
+        "hazardType": "drought",
+        "intensity": "medium",
+        "name": "Chandigarh Drought Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.6854,
+              30.8143
+            ],
+            [
+              76.8734,
+              30.79
+            ],
+            [
+              76.8546,
+              30.6523
+            ],
+            [
+              76.6948,
+              30.6685
+            ],
+            [
+              76.6854,
+              30.8143
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-174",
+        "region": "dadra-and-nagar-haveli-and-daman-and-diu",
+        "hazardType": "flood",
+        "intensity": "medium",
+        "name": "Silvassa Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9319,
+              20.3288
+            ],
+            [
+              73.0839,
+              20.3123
+            ],
+            [
+              73.0687,
+              20.2188
+            ],
+            [
+              72.9395,
+              20.2298
+            ],
+            [
+              72.9319,
+              20.3288
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-175",
+        "region": "dadra-and-nagar-haveli-and-daman-and-diu",
+        "hazardType": "storm surge",
+        "intensity": "high",
+        "name": "Daman Storm surge Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.7718,
+              20.4994
+            ],
+            [
+              72.8938,
+              20.4688
+            ],
+            [
+              72.8816,
+              20.2954
+            ],
+            [
+              72.7779,
+              20.3158
+            ],
+            [
+              72.7718,
+              20.4994
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-176",
+        "region": "delhi",
+        "hazardType": "flood",
+        "intensity": "high",
+        "name": "New Delhi Flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.92,
+              28.8479
+            ],
+            [
+              77.156,
+              28.8308
+            ],
+            [
+              77.1324,
+              28.7339
+            ],
+            [
+              76.9318,
+              28.7453
+            ],
+            [
+              76.92,
+              28.8479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-177",
+        "region": "delhi",
+        "hazardType": "riverine flood",
+        "intensity": "medium",
+        "name": "Dwarka Riverine flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.928,
+              28.6721
+            ],
+            [
+              77.164,
+              28.6481
+            ],
+            [
+              77.1404,
+              28.5121
+            ],
+            [
+              76.9398,
+              28.5281
+            ],
+            [
+              76.928,
+              28.6721
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-178",
+        "region": "jammu-and-kashmir",
+        "hazardType": "cloudburst",
+        "intensity": "medium",
+        "name": "Srinagar Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.5403,
+              34.0627
+            ],
+            [
+              74.7743,
+              34.039
+            ],
+            [
+              74.7509,
+              33.9047
+            ],
+            [
+              74.552,
+              33.9205
+            ],
+            [
+              74.5403,
+              34.0627
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-179",
+        "region": "jammu-and-kashmir",
+        "hazardType": "cloudburst",
+        "intensity": "low",
+        "name": "Jammu Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.833,
+              32.8966
+            ],
+            [
+              75.059,
+              32.8813
+            ],
+            [
+              75.0364,
+              32.7946
+            ],
+            [
+              74.8443,
+              32.8048
+            ],
+            [
+              74.833,
+              32.8966
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-180",
+        "region": "jammu-and-kashmir",
+        "hazardType": "cloudburst",
+        "intensity": "medium",
+        "name": "Anantnag Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.0617,
+              33.8361
+            ],
+            [
+              75.2357,
+              33.8046
+            ],
+            [
+              75.2183,
+              33.6261
+            ],
+            [
+              75.0704,
+              33.6471
+            ],
+            [
+              75.0617,
+              33.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-181",
+        "region": "ladakh",
+        "hazardType": "cloudburst",
+        "intensity": "medium",
+        "name": "Leh Cloudburst Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.4781,
+              34.2656
+            ],
+            [
+              77.6761,
+              34.2317
+            ],
+            [
+              77.6563,
+              34.0396
+            ],
+            [
+              77.488,
+              34.0622
+            ],
+            [
+              77.4781,
+              34.2656
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-182",
+        "region": "ladakh",
+        "hazardType": "flash flood",
+        "intensity": "high",
+        "name": "Kargil Flash flood Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.9449,
+              34.5469
+            ],
+            [
+              76.1389,
+              34.522
+            ],
+            [
+              76.1195,
+              34.3809
+            ],
+            [
+              75.9546,
+              34.3975
+            ],
+            [
+              75.9449,
+              34.5469
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-183",
+        "region": "lakshadweep",
+        "hazardType": "cyclone",
+        "intensity": "medium",
+        "name": "Kavaratti Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.445,
+              10.5519
+            ],
+            [
+              72.641,
+              10.5207
+            ],
+            [
+              72.6214,
+              10.3439
+            ],
+            [
+              72.4548,
+              10.3647
+            ],
+            [
+              72.445,
+              10.5519
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hazardId": "HZ-184",
+        "region": "puducherry",
+        "hazardType": "cyclone",
+        "intensity": "medium",
+        "name": "Puducherry Cyclone Zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.9333,
+              11.9306
+            ],
+            [
+              80.1113,
+              11.8952
+            ],
+            [
+              80.0935,
+              11.6946
+            ],
+            [
+              79.9422,
+              11.7182
+            ],
+            [
+              79.9333,
+              11.9306
+            ]
           ]
         ]
       }

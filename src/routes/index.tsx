@@ -4,6 +4,8 @@ import { ClientOnly } from "@tanstack/react-router";
 import type { Session } from "@supabase/supabase-js";
 import {
   AlertTriangle,
+  Check,
+  ChevronsUpDown,
   LayoutList,
   LogOut,
   Map as MapIcon,
@@ -22,13 +24,16 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+
 import { Skeleton } from "@/components/ui/skeleton";
 import { Slider } from "@/components/ui/slider";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -41,7 +46,7 @@ import {
   updateHabitation,
   type HabitationInput,
 } from "@/lib/habitations";
-import { DEFAULT_REGION, REGIONS } from "@/lib/regions";
+import { DEFAULT_REGION, REGION_BY_ID, REGIONS } from "@/lib/regions";
 import {
   CATEGORY_COLORS,
   DEFAULT_WEIGHTS,
@@ -246,18 +251,14 @@ function Dashboard() {
           </div>
         </div>
 
-        <Select value={region} onValueChange={(v) => { setRegion(v); setSelectedId(null); }}>
-          <SelectTrigger className="w-40 sm:w-56">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {REGIONS.map((r) => (
-              <SelectItem key={r.id} value={r.id}>
-                {r.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <RegionPicker
+          region={region}
+          onChange={(v) => {
+            setRegion(v);
+            setSelectedId(null);
+          }}
+        />
+
 
         <div className="flex rounded-md border border-border p-0.5">
           {([
@@ -439,6 +440,60 @@ function Dashboard() {
     </div>
   );
 }
+
+function RegionPicker({
+  region,
+  onChange,
+}: {
+  region: string;
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const current = REGION_BY_ID[region];
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          aria-label="Select region"
+          className="w-40 justify-between font-normal sm:w-56"
+        >
+          <span className="truncate">{current?.name ?? "Select region"}</span>
+          <ChevronsUpDown className="size-3.5 shrink-0 opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="z-[1200] w-64 p-0" align="start">
+        <Command>
+          <CommandInput placeholder="Search state or region…" />
+          <CommandList className="max-h-72">
+            <CommandEmpty>No region found.</CommandEmpty>
+            <CommandGroup>
+              {REGIONS.map((r) => (
+                <CommandItem
+                  key={r.id}
+                  value={`${r.name} ${r.id}`}
+                  onSelect={() => {
+                    onChange(r.id);
+                    setOpen(false);
+                  }}
+                >
+                  <Check
+                    className={cn("size-3.5", r.id === region ? "opacity-100" : "opacity-0")}
+                  />
+                  <span className="truncate">{r.name}</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
 
 function MapFallback() {
   return (
