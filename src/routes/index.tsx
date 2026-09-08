@@ -439,6 +439,60 @@ function Dashboard() {
   );
 }
 
+function RegionPicker({
+  region,
+  onChange,
+}: {
+  region: string;
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const current = REGION_BY_ID[region];
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          aria-label="Select region"
+          className="w-40 justify-between font-normal sm:w-56"
+        >
+          <span className="truncate">{current?.name ?? "Select region"}</span>
+          <ChevronsUpDown className="size-3.5 shrink-0 opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="z-[1200] w-64 p-0" align="start">
+        <Command>
+          <CommandInput placeholder="Search state or region…" />
+          <CommandList className="max-h-72">
+            <CommandEmpty>No region found.</CommandEmpty>
+            <CommandGroup>
+              {REGIONS.map((r) => (
+                <CommandItem
+                  key={r.id}
+                  value={`${r.name} ${r.id}`}
+                  onSelect={() => {
+                    onChange(r.id);
+                    setOpen(false);
+                  }}
+                >
+                  <Check
+                    className={cn("size-3.5", r.id === region ? "opacity-100" : "opacity-0")}
+                  />
+                  <span className="truncate">{r.name}</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
+
 function MapFallback() {
   return (
     <div className="h-full p-4">
