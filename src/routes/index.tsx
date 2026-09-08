@@ -246,18 +246,14 @@ function Dashboard() {
           </div>
         </div>
 
-        <Select value={region} onValueChange={(v) => { setRegion(v); setSelectedId(null); }}>
-          <SelectTrigger className="w-40 sm:w-56">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {REGIONS.map((r) => (
-              <SelectItem key={r.id} value={r.id}>
-                {r.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <RegionPicker
+          region={region}
+          onChange={(v) => {
+            setRegion(v);
+            setSelectedId(null);
+          }}
+        />
+
 
         <div className="flex rounded-md border border-border p-0.5">
           {([
