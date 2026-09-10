@@ -71,19 +71,17 @@ function AuthPage() {
   return (
     <main className="grid min-h-screen place-items-center bg-background px-4">
       <div className="w-full max-w-sm">
-        <div className="mb-6 flex items-center gap-3">
-          <div className="grid size-11 place-items-center rounded-md bg-primary text-primary-foreground">
+        <div className="mb-5 flex items-center gap-3 border-b border-border pb-4">
+          <div className="grid size-9 place-items-center rounded-sm border border-border bg-secondary text-gis">
             <ShieldAlert className="size-6" />
           </div>
           <div>
-            <h1 className="text-xl font-bold tracking-tight">HazardShield GIS</h1>
-            <p className="text-xs text-muted-foreground">
-              Habitation risk &amp; relocation decision support
-            </p>
+            <h1 className="font-display text-base font-semibold uppercase tracking-wider">HazardShield GIS</h1>
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Decision Support System</p>
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-5 shadow-lg">
+        <div className="rounded border border-border bg-card p-5">
           <Tabs defaultValue="signin">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="signin">Sign in</TabsTrigger>

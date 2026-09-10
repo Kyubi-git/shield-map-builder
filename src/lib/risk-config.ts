@@ -65,7 +65,7 @@ export type CapacityStatus = "Within Capacity" | "Over Capacity (Monitor)" | "Ne
 export const RISK_CATEGORIES: RiskCategory[] = ["Low / Safe", "Moderate", "Red Zone"];
 
 export const CATEGORY_COLORS: Record<RiskCategory, string> = {
-  "Low / Safe": "#16a34a",
-  Moderate: "#d97706",
-  "Red Zone": "#dc2626",
+  "Low / Safe": "#4f9b6d",
+  Moderate: "#c79543",
+  "Red Zone": "#c6534f",
 };

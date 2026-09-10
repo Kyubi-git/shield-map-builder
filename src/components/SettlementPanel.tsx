@@ -54,7 +54,7 @@ export function SettlementPanel({
             <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
               {settlement.settlementId}
             </div>
-            <h2 className="text-lg font-semibold leading-tight">{settlement.name}</h2>
+            <h2 className="font-display text-base font-semibold leading-tight">{settlement.name}</h2>
           </div>
           <div className="flex gap-1">
             <Button variant="ghost" size="icon" onClick={onEdit} aria-label="Edit habitation">
@@ -69,7 +69,7 @@ export function SettlementPanel({
 
       <div className="space-y-5 px-4 py-4">
         <div
-          className="rounded-lg border p-3"
+          className="rounded border p-3"
           style={{ borderColor: `${color}66`, backgroundColor: `${color}1a` }}
         >
           <div className="flex items-end justify-between">
@@ -82,7 +82,7 @@ export function SettlementPanel({
               </div>
             </div>
             <span
-              className="rounded-full px-2.5 py-1 text-xs font-semibold text-white"
+              className="rounded-sm px-2.5 py-1 text-[10px] font-semibold text-primary-foreground"
               style={{ backgroundColor: color }}
             >
               {settlement.riskCategory}
@@ -135,10 +135,10 @@ export function SettlementPanel({
             </div>
             <span
               className={cn(
-                "rounded-full px-2.5 py-1 text-xs font-semibold",
-                settlement.capacityStatus === "Within Capacity" && "bg-emerald-500/15 text-emerald-400",
-                settlement.capacityStatus === "Over Capacity (Monitor)" && "bg-amber-500/15 text-amber-400",
-                settlement.capacityStatus === "Needs Relocation" && "bg-red-500/15 text-red-400",
+                "rounded-sm px-2.5 py-1 text-[10px] font-semibold",
+                settlement.capacityStatus === "Within Capacity" && "bg-risk-safe/15 text-risk-safe",
+                settlement.capacityStatus === "Over Capacity (Monitor)" && "bg-risk-moderate/15 text-risk-moderate",
+                settlement.capacityStatus === "Needs Relocation" && "bg-risk-critical/15 text-risk-critical",
               )}
             >
               {settlement.capacityStatus}

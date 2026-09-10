@@ -59,66 +59,77 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-gis: var(--gis);
+  --color-gis-foreground: var(--gis-foreground);
+  --color-risk-safe: var(--risk-safe);
+  --color-risk-moderate: var(--risk-moderate);
+  --color-risk-critical: var(--risk-critical);
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
 :root {
-  --radius: 0.4rem;
-  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --background: oklch(0.19 0.026 260);
-  --foreground: oklch(0.95 0.008 250);
-  --card: oklch(0.235 0.028 260);
-  --card-foreground: oklch(0.95 0.008 250);
-  --popover: oklch(0.235 0.028 260);
-  --popover-foreground: oklch(0.95 0.008 250);
-  --primary: oklch(0.66 0.16 55);
-  --primary-foreground: oklch(0.18 0.03 260);
-  --secondary: oklch(0.3 0.03 260);
-  --secondary-foreground: oklch(0.95 0.008 250);
-  --muted: oklch(0.3 0.03 260);
-  --muted-foreground: oklch(0.72 0.02 255);
-  --accent: oklch(0.33 0.035 258);
-  --accent-foreground: oklch(0.95 0.008 250);
-  --destructive: oklch(0.58 0.21 27);
-  --destructive-foreground: oklch(0.98 0.003 248);
-  --border: oklch(0.33 0.028 260);
-  --input: oklch(0.35 0.03 260);
-  --ring: oklch(0.66 0.16 55);
+  --radius: 0.25rem;
+  --background: oklch(0.262042 0.013403 253.057);
+  --foreground: oklch(0.963197 0.003431 247.859);
+  --card: oklch(0.291 0.015 253);
+  --card-foreground: oklch(0.963197 0.003431 247.859);
+  --popover: oklch(0.291 0.015 253);
+  --popover-foreground: oklch(0.963197 0.003431 247.859);
+  --primary: oklch(0.482035 0.027192 246.410);
+  --primary-foreground: oklch(0.963197 0.003431 247.859);
+  --secondary: oklch(0.341228 0.020673 254.111);
+  --secondary-foreground: oklch(0.963197 0.003431 247.859);
+  --muted: oklch(0.341228 0.020673 254.111);
+  --muted-foreground: oklch(0.760 0.015 248);
+  --accent: oklch(0.389 0.024 250);
+  --accent-foreground: oklch(0.963197 0.003431 247.859);
+  --destructive: oklch(0.555 0.166 28);
+  --destructive-foreground: oklch(0.963197 0.003431 247.859);
+  --border: oklch(0.392 0.021 251);
+  --input: oklch(0.410 0.023 251);
+  --ring: oklch(0.640 0.075 238);
+  --gis: oklch(0.625 0.112 238);
+  --gis-foreground: oklch(0.963197 0.003431 247.859);
+  --risk-safe: oklch(0.624 0.105 151);
+  --risk-moderate: oklch(0.705 0.125 76);
+  --risk-critical: oklch(0.602 0.165 29);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar: oklch(0.235 0.012 253);
+  --sidebar-foreground: oklch(0.860448 0.012353 247.971);
+  --sidebar-primary: oklch(0.482035 0.027192 246.410);
+  --sidebar-primary-foreground: oklch(0.963197 0.003431 247.859);
+  --sidebar-accent: oklch(0.341228 0.020673 254.111);
+  --sidebar-accent-foreground: oklch(0.963197 0.003431 247.859);
+  --sidebar-border: oklch(0.341228 0.020673 254.111);
+  --sidebar-ring: oklch(0.640 0.075 238);
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
+  --background: oklch(0.262042 0.013403 253.057);
+  --foreground: oklch(0.963197 0.003431 247.859);
+  --card: oklch(0.291 0.015 253);
+  --card-foreground: oklch(0.963197 0.003431 247.859);
+  --popover: oklch(0.291 0.015 253);
+  --popover-foreground: oklch(0.963197 0.003431 247.859);
+  --primary: oklch(0.482035 0.027192 246.410);
+  --primary-foreground: oklch(0.963197 0.003431 247.859);
+  --secondary: oklch(0.341228 0.020673 254.111);
+  --secondary-foreground: oklch(0.963197 0.003431 247.859);
+  --muted: oklch(0.341228 0.020673 254.111);
+  --muted-foreground: oklch(0.760 0.015 248);
+  --accent: oklch(0.389 0.024 250);
+  --accent-foreground: oklch(0.963197 0.003431 247.859);
+  --destructive: oklch(0.555 0.166 28);
+  --destructive-foreground: oklch(0.963197 0.003431 247.859);
+  --border: oklch(0.392 0.021 251);
+  --input: oklch(0.410 0.023 251);
+  --ring: oklch(0.640 0.075 238);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -152,7 +163,8 @@
 
   h1,
   h2 {
-    letter-spacing: -0.01em;
+    font-family: var(--font-display);
+    letter-spacing: 0;
   }
 
   .font-mono,
@@ -164,7 +176,7 @@
 /* Leaflet surface tuned for the dark control-room theme */
 .leaflet-container {
   font-family: var(--font-sans);
-  background: oklch(0.19 0.026 260);
+  background: var(--background);
 }
 
 .leaflet-tile-pane {
@@ -173,20 +185,20 @@
 
 .leaflet-control-attribution,
 .leaflet-tooltip {
-  background: oklch(0.235 0.028 260) !important;
-  color: oklch(0.95 0.008 250) !important;
-  border: 1px solid oklch(0.33 0.028 260) !important;
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
   box-shadow: none !important;
 }
 
 .leaflet-tooltip::before {
-  border-top-color: oklch(0.33 0.028 260) !important;
+  border-top-color: var(--border) !important;
 }
 
 .leaflet-bar a {
-  background: oklch(0.235 0.028 260) !important;
-  color: oklch(0.95 0.008 250) !important;
-  border-bottom-color: oklch(0.33 0.028 260) !important;
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+  border-bottom-color: var(--border) !important;
 }
 
 /* Keep the map beneath dialogs, sheets, dropdowns and toasts.
