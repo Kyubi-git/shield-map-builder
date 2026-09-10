@@ -225,6 +225,10 @@ function Dashboard() {
       onSelect={viewOnMap}
       loading={loading}
       totalCount={scored.length}
+      onSignOut={async () => {
+        await supabase.auth.signOut();
+        navigate({ to: "/auth" });
+      }}
     />
   );
 
@@ -519,6 +523,7 @@ function ControlRail({
   onSelect,
   loading,
   totalCount,
+  onSignOut,
 }: {
   counts: { category: RiskCategory; count: number }[];
   activeCategories: RiskCategory[];
@@ -531,6 +536,7 @@ function ControlRail({
   onSelect: (id: string, lat: number, lng: number) => void;
   loading: boolean;
   totalCount: number;
+  onSignOut: () => void | Promise<void>;
 }) {
   return (
     <div className="flex min-h-full flex-col px-3 py-3">
@@ -643,6 +649,9 @@ function ControlRail({
         <div className="mt-2 flex h-8 items-center gap-2 px-2 text-[11px] text-sidebar-foreground"><BarChart3 className="size-3.5" /> Relocation priority</div>
         <h2 className="mt-3 px-2 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground">System</h2>
         <div className="mt-2 flex h-8 items-center gap-2 px-2 text-[11px] text-sidebar-foreground"><CircleUserRound className="size-3.5" /> Active session</div>
+        <Button variant="ghost" size="sm" className="mt-0.5 h-8 w-full justify-start rounded-sm px-2 text-[11px] font-normal text-sidebar-foreground" onClick={onSignOut}>
+          <LogOut className="size-3.5" /> Sign out
+        </Button>
       </section>
     </div>
   );
