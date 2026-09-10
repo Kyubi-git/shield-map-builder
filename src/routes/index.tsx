@@ -4,12 +4,16 @@ import { ClientOnly } from "@tanstack/react-router";
 import type { Session } from "@supabase/supabase-js";
 import {
   AlertTriangle,
+  BarChart3,
   Check,
   ChevronsUpDown,
+  CircleUserRound,
+  Database,
   LayoutList,
   LogOut,
   Map as MapIcon,
   MapPinOff,
+  PanelsTopLeft,
   Plus,
   RotateCcw,
   ShieldAlert,
@@ -226,7 +230,7 @@ function Dashboard() {
 
   return (
     <div className="flex h-screen flex-col overflow-hidden bg-background text-foreground">
-      <header className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border bg-card px-3 py-2.5 sm:gap-4 sm:px-4">
+      <header className="flex min-h-14 shrink-0 flex-wrap items-center gap-2 border-b border-border bg-card px-3 py-2 sm:gap-4 sm:px-5">
         <div className="flex min-w-0 items-center gap-2.5">
           <Sheet open={controlsOpen} onOpenChange={setControlsOpen}>
             <SheetTrigger asChild>
@@ -240,14 +244,12 @@ function Dashboard() {
             </SheetContent>
           </Sheet>
 
-          <div className="grid size-9 shrink-0 place-items-center rounded bg-primary text-primary-foreground">
+          <div className="grid size-8 shrink-0 place-items-center rounded-sm border border-border bg-secondary text-gis">
             <ShieldAlert className="size-5" />
           </div>
           <div className="min-w-0">
-            <h1 className="truncate text-sm font-bold uppercase tracking-widest">HazardShield GIS</h1>
-            <p className="hidden text-[10px] text-muted-foreground sm:block">
-              Habitation risk &amp; relocation decision support
-            </p>
+            <h1 className="truncate font-display text-xs font-semibold uppercase tracking-wider">HazardShield GIS</h1>
+            <p className="hidden text-[9px] uppercase tracking-wider text-muted-foreground sm:block">Decision Support System</p>
           </div>
         </div>
 
@@ -260,30 +262,32 @@ function Dashboard() {
         />
 
 
-        <div className="flex rounded-md border border-border p-0.5">
+        <div className="flex rounded border border-border bg-background p-0.5">
           {([
             { key: "map", label: "Map view", icon: MapIcon },
             { key: "report", label: "Relocation priority", icon: LayoutList },
           ] as const).map(({ key, label, icon: Icon }) => (
-            <button
+            <Button
               key={key}
+              size="sm"
+              variant="ghost"
               onClick={() => setView(key)}
               aria-label={label}
               className={cn(
-                "flex items-center gap-1.5 rounded px-2.5 py-1.5 text-xs font-medium transition-colors sm:px-3",
+                "h-7 rounded-sm px-2.5 text-[11px] font-medium sm:px-3",
                 view === key
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-secondary text-foreground"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
               <Icon className="size-3.5 shrink-0" />
               <span className="hidden md:inline">{label}</span>
               {key === "report" && priority.length > 0 && (
-                <span className="rounded-full bg-destructive px-1.5 text-[10px] font-bold text-white">
+                  <span className="rounded-sm bg-destructive px-1.5 text-[9px] font-bold text-destructive-foreground">
                   {priority.length}
                 </span>
               )}
-            </button>
+            </Button>
           ))}
         </div>
 
@@ -314,7 +318,7 @@ function Dashboard() {
       </header>
 
       <div className="flex min-h-0 flex-1">
-        <aside className="hidden w-72 shrink-0 overflow-y-auto border-r border-border bg-card lg:block">
+        <aside className="hidden w-72 shrink-0 overflow-y-auto border-r border-border bg-sidebar lg:block">
           {controlRail}
         </aside>
 
@@ -529,16 +533,50 @@ function ControlRail({
   totalCount: number;
 }) {
   return (
-    <div className="flex flex-col gap-5 px-4 py-4">
-      <section>
-        <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-          Risk categories
-        </h2>
-        <div className="mt-2 space-y-1.5">
+    <div className="flex min-h-full flex-col px-3 py-3">
+      <section className="border-b border-sidebar-border pb-3">
+        <h2 className="px-2 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground">Geospatial</h2>
+        <div className="mt-2 space-y-0.5">
+          <div className="relative flex h-8 items-center gap-2 rounded-sm bg-sidebar-accent px-2 text-[11px] font-semibold text-sidebar-accent-foreground before:absolute before:inset-y-1 before:left-0 before:w-0.5 before:bg-gis">
+            <MapIcon className="size-3.5 text-gis" /> Map view
+          </div>
+          <div className="flex h-8 items-center gap-2 px-2 text-[11px] text-sidebar-foreground">
+            <Database className="size-3.5" /> Habitations <span className="ml-auto font-mono text-[10px] text-muted-foreground">{loading ? "—" : totalCount}</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-sidebar-border py-3">
+        <h2 className="px-2 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground">Analysis</h2>
+        <div className="mt-2 flex items-center gap-2 px-2 text-[11px] font-medium text-sidebar-foreground">
+          <SlidersHorizontal className="size-3.5" /> Hazard weights
+          <Button size="sm" variant="ghost" className="ml-auto h-6 px-1.5 text-[9px] text-muted-foreground" onClick={() => onWeights(() => ({ ...DEFAULT_WEIGHTS }))}>
+            <RotateCcw className="size-3" /> Reset
+          </Button>
+        </div>
+        <div className="mt-3 space-y-3 px-2">
+          {WEIGHT_FIELDS.map(({ key, label }) => (
+            <div key={key}>
+              <div className="flex items-center justify-between text-[10px]">
+                <Label className="text-[10px] text-muted-foreground">{label}</Label>
+                <span className="font-mono tabular-nums text-foreground">{weights[key].toFixed(2)}</span>
+              </div>
+              <Slider className="mt-1.5" min={0} max={1} step={0.05} value={[weights[key]]} onValueChange={([v]) => onWeights((w) => ({ ...w, [key]: v ?? 0 }))} />
+            </div>
+          ))}
+        </div>
+        <p className="mt-2 px-2 text-[9px] leading-relaxed text-muted-foreground">
+          Normalized {normalized.hazardProximityWeight.toFixed(2)} / {normalized.populationDensityWeight.toFixed(2)} / {normalized.terrainWeight.toFixed(2)}
+        </p>
+
+        <div className="mt-4 flex items-center gap-2 px-2 text-[11px] font-medium text-sidebar-foreground">
+          <PanelsTopLeft className="size-3.5" /> Risk categories
+        </div>
+        <div className="mt-2 space-y-1">
           {counts.map(({ category, count }) => (
             <label
               key={category}
-              className="flex cursor-pointer items-center gap-2.5 rounded-md border border-border/60 bg-muted/20 px-2.5 py-2"
+              className="flex cursor-pointer items-center gap-2 border border-transparent px-2 py-1.5 hover:border-sidebar-border hover:bg-sidebar-accent"
             >
               <Checkbox
                 checked={activeCategories.includes(category)}
@@ -548,8 +586,8 @@ function ControlRail({
                 className="size-2.5 shrink-0 rounded-full"
                 style={{ backgroundColor: CATEGORY_COLORS[category] }}
               />
-              <span className="min-w-0 flex-1 truncate text-xs font-medium">{category}</span>
-              <span className="font-mono text-xs tabular-nums text-muted-foreground">
+               <span className="min-w-0 flex-1 truncate text-[10px] font-medium">{category}</span>
+               <span className="font-mono text-[10px] tabular-nums text-muted-foreground">
                 {loading ? "—" : count}
               </span>
             </label>
@@ -557,57 +595,11 @@ function ControlRail({
         </div>
       </section>
 
-      <section>
-        <div className="flex items-center justify-between">
-          <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-            Risk weights
-          </h2>
-          <Button
-            size="sm"
-            variant="ghost"
-            className="h-6 px-1.5 text-[11px]"
-            onClick={() => onWeights(() => ({ ...DEFAULT_WEIGHTS }))}
-          >
-            <RotateCcw className="size-3" /> Reset
-          </Button>
+      <section className="min-h-0 flex-1 border-b border-sidebar-border py-3">
+        <div className="flex items-center gap-2 px-2">
+          <Database className="size-3.5 text-muted-foreground" />
+          <h2 className="text-[9px] font-semibold uppercase tracking-widest text-muted-foreground">Habitations ({loading ? "…" : visible.length})</h2>
         </div>
-        <div className="mt-3 space-y-4">
-          {WEIGHT_FIELDS.map(({ key, label }) => (
-            <div key={key}>
-              <div className="flex items-center justify-between text-xs">
-                <Label className="text-xs">{label}</Label>
-                <span className="font-mono tabular-nums">{weights[key].toFixed(2)}</span>
-              </div>
-              <Slider
-                className="mt-2"
-                min={0}
-                max={1}
-                step={0.05}
-                value={[weights[key]]}
-                onValueChange={([v]) => onWeights((w) => ({ ...w, [key]: v ?? 0 }))}
-              />
-            </div>
-          ))}
-        </div>
-        <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
-          Total{" "}
-          <span className="font-mono">
-            {(
-              weights.hazardProximityWeight +
-              weights.populationDensityWeight +
-              weights.terrainWeight
-            ).toFixed(2)}
-          </span>{" "}
-          — normalised to {normalized.hazardProximityWeight.toFixed(2)} /{" "}
-          {normalized.populationDensityWeight.toFixed(2)} /{" "}
-          {normalized.terrainWeight.toFixed(2)} before scoring.
-        </p>
-      </section>
-
-      <section className="min-h-0">
-        <h2 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-          Habitations ({loading ? "…" : visible.length})
-        </h2>
         {loading ? (
           <div className="mt-2 space-y-1.5">
             {Array.from({ length: 6 }).map((_, i) => (
@@ -621,14 +613,14 @@ function ControlRail({
               : "No habitation matches the selected risk categories."}
           </p>
         ) : (
-          <ul className="mt-2 space-y-1">
+          <ul className="mt-2 space-y-0.5">
             {visible.map((h) => (
               <li key={h.id}>
                 <button
                   onClick={() => onSelect(h.id, h.latitude, h.longitude)}
                   className={cn(
-                    "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-xs transition-colors hover:bg-muted",
-                    selectedId === h.id && "bg-muted",
+                    "relative flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-left text-[10px] transition-colors hover:bg-sidebar-accent",
+                    selectedId === h.id && "bg-sidebar-accent font-semibold before:absolute before:inset-y-1 before:left-0 before:w-0.5 before:bg-gis",
                   )}
                 >
                   <span
@@ -645,6 +637,13 @@ function ControlRail({
           </ul>
         )}
       </section>
+
+      <section className="py-3">
+        <h2 className="px-2 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground">Reports</h2>
+        <div className="mt-2 flex h-8 items-center gap-2 px-2 text-[11px] text-sidebar-foreground"><BarChart3 className="size-3.5" /> Relocation priority</div>
+        <h2 className="mt-3 px-2 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground">System</h2>
+        <div className="mt-2 flex h-8 items-center gap-2 px-2 text-[11px] text-sidebar-foreground"><CircleUserRound className="size-3.5" /> Active session</div>
+      </section>
     </div>
   );
 }
@@ -658,13 +657,13 @@ function RelocationReport({
 }) {
   return (
     <div className="h-full overflow-y-auto px-4 py-5 sm:px-6">
-      <h2 className="text-lg font-semibold">Relocation Priority Report</h2>
+      <h2 className="font-display text-base font-semibold">Relocation Priority Report</h2>
       <p className="mt-1 text-xs text-muted-foreground">
         Habitations classified as Red Zone or exceeding safe carrying capacity, ranked by combined
         urgency. Decision-support output — not a guaranteed prediction.
       </p>
 
-      <div className="mt-4 overflow-x-auto rounded-lg border border-border">
+      <div className="mt-4 overflow-x-auto rounded border border-border">
         <table className="w-full min-w-[880px] text-sm">
           <thead className="bg-muted/40 text-[11px] uppercase tracking-wider text-muted-foreground">
             <tr>
@@ -700,7 +699,7 @@ function RelocationReport({
                 </td>
                 <td className="px-3 py-2">
                   <span
-                    className="rounded-full px-2 py-0.5 text-[11px] font-semibold text-white"
+                    className="rounded-sm px-2 py-0.5 text-[10px] font-semibold text-primary-foreground"
                     style={{ backgroundColor: CATEGORY_COLORS[h.riskCategory] }}
                   >
                     {h.riskCategory}
